@@ -16,7 +16,7 @@ const totalPrice = (carryMat, tent, sleepingBag);
 console.log(`Total price of all products is: ${totalPrice}`);
 
 const roundedTotalPrice = Math.floor(carryMat) + Math.floor(tent) + Math.floor(sleepingBag);
-console.log(`Total price of all prcoducts, rounded down: ${roundedTotalPrice}`);
+console.log(`Total price of all products, rounded down: ${roundedTotalPrice}`);
 
 const roundedToHundreds = Math.round(roundedTotalPrice / 100) * 100;
 console.log(`Total price rounded to hundreds: ${roundedToHundreds}`);
