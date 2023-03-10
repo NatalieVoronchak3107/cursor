@@ -9,4 +9,4 @@ for (let i = n; i <= m; i++) {
   }
 }
 
-document.writeln(`The sum of number ${n} and ${m} is ${sum}`);
+document.writeln(`The sum of number ${n} and number ${m} is ${sum}`);
