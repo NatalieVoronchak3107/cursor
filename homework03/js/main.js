@@ -164,3 +164,15 @@ function deleteDuplicateLetter(string) {
   }
   
   console.log(deleteDuplicateLetter("Бісквіт був дуже ніжним"));
+
+document.writeln(`Function 01: ${getMaxDigit("7983")} <br>`); 
+document.writeln(`Function 02: ${capitalizeName("naTaliia")} <br>`);
+document.writeln(`Function 03: ${getPow(5, 2)} <br>`);                
+document.writeln(`Function 04: ${calculateNetSalary(1000)} <br>`); 
+document.writeln(`Function 05: ${getRandomNumber(1, 10)} <br>`);
+document.writeln(`Function 06: ${countLetter("а", "Асталавіста")} <br>`);  
+document.writeln(`Function 07: ${convertCurrency("100$")} <br>`); 
+document.writeln(`Function 08: ${getRandomPassword(7)} <br>`);
+document.writeln(`Function 09: ${deleteLetters("a", "blablabla")} <br>`);
+document.writeln(`Function 10: ${isPalindrome('Я несу гусеня')} <br>`);
+document.writeln(`Function 11: ${deleteDuplicateLetter("Бісквіт був дуже ніжним")} <br>`);
