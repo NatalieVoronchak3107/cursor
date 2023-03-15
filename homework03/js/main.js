@@ -48,3 +48,13 @@ function calculateNetSalary(grossSalary) {
   }
   
   console.log(calculateNetSalary(1000));
+
+/* Створити функцію, яка повертає випадкове ціле число в
+діапазоні від N до M.
+Приклад: getRandomNumber(1, 10) -> 5 */
+
+function getRandomNumber (n, m) {
+    return Math.floor(Math.random() * (m - n + 1)) + n;
+}
+
+console.log(getRandomNumber(1, 10));
