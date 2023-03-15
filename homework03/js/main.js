@@ -28,33 +28,33 @@ console.log(capitalizeName("naTaliia"));
 використовуючи Math.pow та **. Використовуйте цикл */
 
 function getPow(number, exponent) {
-    let result = 1;
+  let result = 1;
   for (let i = 0; i < exponent; i++) {
     result *= number;
   }
   return result;
 }
-console.log(getPow(5,2));
+console.log(getPow(5, 2));
 
 /*Створити функцію, яка вираховує суму, що залишається після
 оплати податку від зарабітньої плати. (Податок = 18% + 1.5% ->
 19.5%). Приклад: 1000 -> 805 */
 
 function calculateNetSalary(grossSalary) {
-    const taxRate = 0.195;
-    const tax = grossSalary * taxRate;
-    const netSalary = grossSalary - tax;
-    return netSalary;
-  }
-  
-  console.log(calculateNetSalary(1000));
+  const taxRate = 0.195;
+  const tax = grossSalary * taxRate;
+  const netSalary = grossSalary - tax;
+  return netSalary;
+}
+
+console.log(calculateNetSalary(1000));
 
 /* Створити функцію, яка повертає випадкове ціле число в
 діапазоні від N до M.
 Приклад: getRandomNumber(1, 10) -> 5 */
 
-function getRandomNumber (n, m) {
-    return Math.floor(Math.random() * (m - n + 1)) + n;
+function getRandomNumber(n, m) {
+  return Math.floor(Math.random() * (m - n + 1)) + n;
 }
 
 console.log(getRandomNumber(1, 10));
@@ -64,16 +64,16 @@ console.log(getRandomNumber(1, 10));
 Приклад: countLetter("а", "Асталавіста") -> 4 */
 
 function countLetter(letter, word) {
-    let count = 0;
-    for (let i = 0; i < word.length; i++) {
-      if (word[i].toLowerCase() === letter.toLowerCase()) {
-        count++;
-      }
+  let count = 0;
+  for (let i = 0; i < word.length; i++) {
+    if (word[i].toLowerCase() === letter.toLowerCase()) {
+      count++;
     }
-    return count;
   }
+  return count;
+}
 
-console.log(countLetter("а","Асталавіста"))
+console.log(countLetter("а", "Асталавіста"));
 
 /* Створіть функцію, яка конвертує долари в гривні та навпаки в
 залежності від наявності символа $ або UAH в рядку.
@@ -81,37 +81,46 @@ console.log(countLetter("а","Асталавіста"))
 convertCurrency("2500UAH") -> 100$ */
 
 function convertCurrency(string) {
-    let exchangeRate = 25; //
-    let amount = parseFloat(string);
-  
-    if (string.includes("$")) {
-      amount *= exchangeRate;
-      return amount.toFixed() + " грн.";
-    } else if (string.includes("UAH")) {
-      amount /= exchangeRate;
-      return amount.toFixed() + "$";
-    } else {
-      return "Невідома валюта";
-    }
-  }
-  
-  console.log(convertCurrency("100$"));
-  console.log(convertCurrency("2500UAH"));
+  let exchangeRate = 25; //
+  let amount = parseFloat(string);
 
-  /* Створіть функцію генерації випадкового паролю (тільки числа),
+  if (string.includes("$")) {
+    amount *= exchangeRate;
+    return amount.toFixed() + " грн.";
+  } else if (string.includes("UAH")) {
+    amount /= exchangeRate;
+    return amount.toFixed() + "$";
+  } else {
+    return "Невідома валюта";
+  }
+}
+
+console.log(convertCurrency("100$"));
+console.log(convertCurrency("2500UAH"));
+
+/* Створіть функцію генерації випадкового паролю (тільки числа),
 довжина встановлюється користувачем або по замовчуванню = 8
 символам. Приклад: getRandomPassword(4) -> 1875, getRandomPassword() ->
 87240124 */
-  function getRandomPassword(length = 7) {
-    let password = '';
-    const characters = '0123456789';
-    const charactersLength = characters.length;
-    
-    for (let i = 0; i < length; i++) {
-      password += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    
-    return password;
+
+function getRandomPassword(length = 7) {
+  let password = "";
+  const characters = "0123456789";
+  const charactersLength = characters.length;
+
+  for (let i = 0; i < length; i++) {
+    password += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
 
-  console.log(getRandomPassword(7));
+  return password;
+}
+
+console.log(getRandomPassword(7));
+
+/* Створіть функцію JavaScript, яка видаляє всі букви з речення.
+Приклад: deleteLetters('a', "blablabla") -> "blblbl" */
+
+function deleteLetters(letter, string) {
+  return string.split(letter).join("");
+}
+console.log(deleteLetters("a", "blablabla"));
