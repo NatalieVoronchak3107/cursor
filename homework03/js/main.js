@@ -35,3 +35,16 @@ function getPow(number, exponent) {
   return result;
 }
 console.log(getPow(5,2));
+
+/*Створити функцію, яка вираховує суму, що залишається після
+оплати податку від зарабітньої плати. (Податок = 18% + 1.5% ->
+19.5%). Приклад: 1000 -> 805 */
+
+function calculateNetSalary(grossSalary) {
+    const taxRate = 0.195;
+    const tax = grossSalary * taxRate;
+    const netSalary = grossSalary - tax;
+    return netSalary;
+  }
+  
+  console.log(calculateNetSalary(1000));
