@@ -58,3 +58,19 @@ function getRandomNumber (n, m) {
 }
 
 console.log(getRandomNumber(1, 10));
+
+/* Створити функцію, яка рахує скільки разів певна буква
+повторюється в слові.
+Приклад: countLetter("а", "Асталавіста") -> 4 */
+
+function countLetter(letter, word) {
+    let count = 0;
+    for (let i = 0; i < word.length; i++) {
+      if (word[i].toLowerCase() === letter.toLowerCase()) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+console.log(countLetter("а","Асталавіста"))
