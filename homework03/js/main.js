@@ -97,3 +97,21 @@ function convertCurrency(string) {
   
   console.log(convertCurrency("100$"));
   console.log(convertCurrency("2500UAH"));
+
+  /* Створіть функцію генерації випадкового паролю (тільки числа),
+довжина встановлюється користувачем або по замовчуванню = 8
+символам. Приклад: getRandomPassword(4) -> 1875, getRandomPassword() ->
+87240124 */
+  function getRandomPassword(length = 7) {
+    let password = '';
+    const characters = '0123456789';
+    const charactersLength = characters.length;
+    
+    for (let i = 0; i < length; i++) {
+      password += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    
+    return password;
+  }
+
+  console.log(getRandomPassword(7));
