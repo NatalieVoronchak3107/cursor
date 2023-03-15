@@ -74,3 +74,26 @@ function countLetter(letter, word) {
   }
 
 console.log(countLetter("а","Асталавіста"))
+
+/* Створіть функцію, яка конвертує долари в гривні та навпаки в
+залежності від наявності символа $ або UAH в рядку.
+Приклад: convertCurrency("100$") -> 2500 грн. або
+convertCurrency("2500UAH") -> 100$ */
+
+function convertCurrency(string) {
+    let exchangeRate = 25; //
+    let amount = parseFloat(string);
+  
+    if (string.includes("$")) {
+      amount *= exchangeRate;
+      return amount.toFixed() + " грн.";
+    } else if (string.includes("UAH")) {
+      amount /= exchangeRate;
+      return amount.toFixed() + "$";
+    } else {
+      return "Невідома валюта";
+    }
+  }
+  
+  console.log(convertCurrency("100$"));
+  console.log(convertCurrency("2500UAH"));
