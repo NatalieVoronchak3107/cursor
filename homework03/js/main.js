@@ -140,3 +140,28 @@ function isPalindrome(string) {
   console.log(isPalindrome('мадам')); 
   console.log(isPalindrome('кокос')); 
   console.log(isPalindrome('Я несу гусеня'));
+
+/* Створіть функцію, яка видалить з речення букви, які
+зустрічаються більше 1 разу.
+Приклад: deleteDuplicateLetter("Бісквіт був дуже ніжним") ->
+"сктдеим" */
+
+function deleteDuplicateLetter(string) {
+    const letters = string.split('');
+    const letterCounts = {};
+    
+    for (let i = 0; i < letters.length; i++) {
+      const letter = letters[i].toLowerCase();
+      letterCounts[letter] = (letterCounts[letter] || 0) + 1;
+    }
+  
+    const output = letters.filter((letter) => {
+      const lowercaseLetter = letter.toLowerCase();
+      return letterCounts[lowercaseLetter] === 1;
+    });
+    
+    return output.join('');
+  }
+  
+  
+  console.log(deleteDuplicateLetter("Бісквіт був дуже ніжним"));
