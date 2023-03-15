@@ -163,5 +163,4 @@ function deleteDuplicateLetter(string) {
     return output.join('');
   }
   
-  
   console.log(deleteDuplicateLetter("Бісквіт був дуже ніжним"));
