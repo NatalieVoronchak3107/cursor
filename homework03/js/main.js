@@ -34,6 +34,7 @@ function getPow(number, exponent) {
   }
   return result;
 }
+
 console.log(getPow(5, 2));
 
 /*Створити функцію, яка вираховує суму, що залишається після
@@ -123,4 +124,19 @@ console.log(getRandomPassword(7));
 function deleteLetters(letter, string) {
   return string.split(letter).join("");
 }
+
 console.log(deleteLetters("a", "blablabla"));
+
+/* Створіть функцію, яка перевіряє, чи є слово паліндромом.
+Приклад: isPalyndrom("мадам") -> true, isPalyndrom("кокос") -> false,
+isPalyndrom("Я несу гусеня") -> true */
+
+function isPalindrome(string) {
+    const cleanedStr = string.toLowerCase().replace(/[^a-zа-яё]/g, '');
+    const reversed = cleanedStr.split('').reverse().join('');
+    return cleanedStr === reversed;
+  }
+
+  console.log(isPalindrome('мадам')); 
+  console.log(isPalindrome('кокос')); 
+  console.log(isPalindrome('Я несу гусеня'));
