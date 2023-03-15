@@ -1,4 +1,4 @@
-/*Створити функцію getMaxDigit(number), яка отримує будь-яке
+/* 01.Створити функцію getMaxDigit(number), яка отримує будь-яке
 число та виводить найбільшу цифру в цьому числі.*/
 
 function getMaxDigit(number) {
@@ -15,7 +15,7 @@ function getMaxDigit(number) {
 
 console.log(getMaxDigit("7983"));
 
-/*Створити функцію, яка форматує ім'я, роблячи першу букву
+/* 02.Створити функцію, яка форматує ім'я, роблячи першу букву
 великою. ("влад" -> "Влад", "вЛАД" -> "Влад" і так далі);*/
 
 function capitalizeName(name) {
@@ -24,7 +24,7 @@ function capitalizeName(name) {
 
 console.log(capitalizeName("naTaliia"));
 
-/*Створити функцію, яка визначає ступінь числа, не
+/* 03.Створити функцію, яка визначає ступінь числа, не
 використовуючи Math.pow та **. Використовуйте цикл */
 
 function getPow(number, exponent) {
@@ -37,7 +37,7 @@ function getPow(number, exponent) {
 
 console.log(getPow(5, 2));
 
-/*Створити функцію, яка вираховує суму, що залишається після
+/* 04.Створити функцію, яка вираховує суму, що залишається після
 оплати податку від зарабітньої плати. (Податок = 18% + 1.5% ->
 19.5%). Приклад: 1000 -> 805 */
 
@@ -50,7 +50,7 @@ function calculateNetSalary(grossSalary) {
 
 console.log(calculateNetSalary(1000));
 
-/* Створити функцію, яка повертає випадкове ціле число в
+/* 05.Створити функцію, яка повертає випадкове ціле число в
 діапазоні від N до M.
 Приклад: getRandomNumber(1, 10) -> 5 */
 
@@ -60,7 +60,7 @@ function getRandomNumber(n, m) {
 
 console.log(getRandomNumber(1, 10));
 
-/* Створити функцію, яка рахує скільки разів певна буква
+/* 06.Створити функцію, яка рахує скільки разів певна буква
 повторюється в слові.
 Приклад: countLetter("а", "Асталавіста") -> 4 */
 
@@ -76,7 +76,7 @@ function countLetter(letter, word) {
 
 console.log(countLetter("а", "Асталавіста"));
 
-/* Створіть функцію, яка конвертує долари в гривні та навпаки в
+/* 07.Створіть функцію, яка конвертує долари в гривні та навпаки в
 залежності від наявності символа $ або UAH в рядку.
 Приклад: convertCurrency("100$") -> 2500 грн. або
 convertCurrency("2500UAH") -> 100$ */
@@ -99,7 +99,7 @@ function convertCurrency(string) {
 console.log(convertCurrency("100$"));
 console.log(convertCurrency("2500UAH"));
 
-/* Створіть функцію генерації випадкового паролю (тільки числа),
+/* 08.Створіть функцію генерації випадкового паролю (тільки числа),
 довжина встановлюється користувачем або по замовчуванню = 8
 символам. Приклад: getRandomPassword(4) -> 1875, getRandomPassword() ->
 87240124 */
@@ -118,7 +118,7 @@ function getRandomPassword(length = 7) {
 
 console.log(getRandomPassword(7));
 
-/* Створіть функцію JavaScript, яка видаляє всі букви з речення.
+/* 09.Створіть функцію JavaScript, яка видаляє всі букви з речення.
 Приклад: deleteLetters('a', "blablabla") -> "blblbl" */
 
 function deleteLetters(letter, string) {
@@ -127,7 +127,7 @@ function deleteLetters(letter, string) {
 
 console.log(deleteLetters("a", "blablabla"));
 
-/* Створіть функцію, яка перевіряє, чи є слово паліндромом.
+/* 10.Створіть функцію, яка перевіряє, чи є слово паліндромом.
 Приклад: isPalyndrom("мадам") -> true, isPalyndrom("кокос") -> false,
 isPalyndrom("Я несу гусеня") -> true */
 
@@ -141,7 +141,7 @@ function isPalindrome(string) {
   console.log(isPalindrome('кокос')); 
   console.log(isPalindrome('Я несу гусеня'));
 
-/* Створіть функцію, яка видалить з речення букви, які
+/* 11.Створіть функцію, яка видалить з речення букви, які
 зустрічаються більше 1 разу.
 Приклад: deleteDuplicateLetter("Бісквіт був дуже ніжним") ->
 "сктдеим" */
