@@ -8,6 +8,27 @@ const marks = [4, 5, 5, 3, 4, 5];
 проєктом. У вас повинен вийти вкладений масив з парами студентів:
 [["Олександр", "Олена"], [..], [...]]; */
 
+const maleStudents = [];
+const femaleStudents = [];
+
+// розділення студентів на хлопців та дівчат
+students.forEach((student) => {
+  if (student.endsWith("а")) {
+    femaleStudents.push(student);
+  } else {
+    maleStudents.push(student);
+  }
+});
+
+// створення пар хлопець + дівчина
+const pairs = [];
+const length = Math.min(maleStudents.length, femaleStudents.length);
+for (let i = 0; i < length; i++) {
+  pairs.push([maleStudents[i], femaleStudents[i]]);
+}
+
+console.log(pairs);
+
 /* 02. Зіставте пари з попереднього завдання та теми проєктів, над
 якими студенти будуть працювати.
 Повинен вийти вкладений масив виду: [["Олександр і Олена",
@@ -21,12 +42,12 @@ const marks = [4, 5, 5, 3, 4, 5];
 [["Олександр і Олена", "Теорія автоматів", 5], [...], [...]] */
 
 
-const pairs = getPairs(students);
-const pairsTheme = getThemes(pairs, themes);
+/* const pairsTheme = getThemes(pairs, themes);
 const studentMarks = getMarks(students, marks);
 const pairsMarks = getPairsMarks(pairs, themes);
 
-console.log(pairs);
+
 console.log(pairsTheme);
 console.log(studentMarks);
 console.log(pairsMarks);
+*/
