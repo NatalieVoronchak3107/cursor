@@ -11,7 +11,6 @@ const marks = [4, 5, 5, 3, 4, 5];
 const maleStudents = [];
 const femaleStudents = [];
 
-// розділення студентів на хлопців та дівчат
 students.forEach((student) => {
   if (student.endsWith("а")) {
     femaleStudents.push(student);
@@ -20,7 +19,6 @@ students.forEach((student) => {
   }
 });
 
-// створення пар хлопець + дівчина
 const pairs = [];
 const length = Math.min(maleStudents.length, femaleStudents.length);
 for (let i = 0; i < length; i++) {
