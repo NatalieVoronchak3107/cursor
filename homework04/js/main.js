@@ -32,6 +32,12 @@ console.log(pairs);
 Повинен вийти вкладений масив виду: [["Олександр і Олена",
 "Теорія автоматів"], [...], [...]] */
 
+const pairsWithThemes = pairs.map((pair, index) => {
+  return [pair.join(" і "), themes[index]];
+});
+
+console.log(pairsWithThemes);
+
 /* 03. Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...],
 [...]] */
 
