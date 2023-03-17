@@ -71,12 +71,15 @@ console.log(studentMarks);
 (тут функція буде не чистою, але не повинна мутувати массив):
 [["Олександр і Олена", "Теорія автоматів", 5], [...], [...]] */
 
-/* const pairsTheme = getThemes(pairs, themes);
-const studentMarks = getMarks(students, marks);
-const pairsMarks = getPairsMarks(pairs, themes);
+const assignRandomMark = (assignedTopicsToPairs) => {
+    const randomMarkforPairs = [];
 
-
-console.log(pairsTheme);
-console.log(studentMarks);
-console.log(pairsMarks);
-*/
+    for (let i = 0; i < assignedTopicsToPairs.length; i++) {
+        randomMarkforPairs.push([assignedTopicsToPairs[i], (Math.floor(Math.random() * 5) + 1)]);
+      }
+      return randomMarkforPairs;
+    }
+    
+    const randomMarkforPairs = assignRandomMark(assignedTopicsToPairs);
+    console.log(randomMarkforPairs);
+    
