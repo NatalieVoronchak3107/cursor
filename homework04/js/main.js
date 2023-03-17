@@ -54,6 +54,19 @@ console.log(assignedTopicsToPairs);
 /* 03. Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...],
 [...]] */
 
+const assignMarks = (students, marks) => {
+  const studentMarks = [];
+
+  for (let i = 0; i < students.length; i++) {
+    studentMarks.push([students[i], marks[i]]);
+  }
+
+  return studentMarks;
+};
+
+const studentMarks = assignMarks(students, marks);
+console.log(studentMarks);
+
 /* 04. Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт
 (тут функція буде не чистою, але не повинна мутувати массив):
 [["Олександр і Олена", "Теорія автоматів", 5], [...], [...]] */
