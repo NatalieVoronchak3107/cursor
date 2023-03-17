@@ -1,6 +1,6 @@
 const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій",
 "Світлана"];
-const themes = ["Диференційне рівняння", "Теорія автоматів",
+const topics = ["Диференційне рівняння", "Теорія автоматів",
 "Алгоритми і структури даних"];
 const marks = [4, 5, 5, 3, 4, 5];
 
@@ -32,11 +32,11 @@ console.log(pairs);
 Повинен вийти вкладений масив виду: [["Олександр і Олена",
 "Теорія автоматів"], [...], [...]] */
 
-const pairsWithThemes = pairs.map((pair, index) => {
-  return [pair.join(" і "), themes[index]];
+const pairsWithTopics = pairs.map((pair, index) => {
+  return [pair.join(" і "), topics[index]];
 });
 
-console.log(pairsWithThemes);
+console.log(pairsWithTopics);
 
 /* 03. Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...],
 [...]] */
