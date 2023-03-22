@@ -146,25 +146,3 @@ console.log(divideByThree("live"));
 "nma"]
 Приклад: generateCombinations("ol") -> ["ol", "lo"] */
 
-const generateCombinations = (word) => {
-  if (word.length > 10) {
-    return [];
-  } else if (word.length < 1) {
-    return [word];
-  } else {
-    const result = [];
-    for (let i = 0; i < word.length; i++) {
-      const currentChar = word[i];
-      const remainingChars = word.slice(0, i) + word.slice(i + 1);
-      const combinations = generateCombinations(remainingChars);
-      for (let j = 0; j < combinations.length; j++) {
-        result.push(currentChar + combinations[j]);
-      }
-    }
-    return [...new Set(result)];
-  }
-};
-
-console.log(generateCombinations("man"));
-console.log(generateCombinations("ol"));
-console.log(generateCombinations("awesomeness"));
