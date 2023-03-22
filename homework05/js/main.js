@@ -58,6 +58,12 @@ console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6));
 чисел більших
 Приклад: countPositiveNumbers(1, -2, 3, -4, -5, 6) -> 3 */
 
+const countPositiveNumbers = (...numbers) => {
+    const positiveNumbers = numbers.filter(number => number > 0).length;
+    return positiveNumbers;
+}
+
+console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6));
 
 /* 7. Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи
 в масиві та залишить тільки ті, які діляться на ціло на 5
