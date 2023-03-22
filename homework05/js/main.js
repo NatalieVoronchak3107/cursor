@@ -52,6 +52,7 @@ const filterEvenNumbers = (...numbers) => {
     const skipEvenNumbers = numbers.filter(number => number % 2 !== 0);
     return skipEvenNumbers;
 }
+
 console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6));
 
 /* 6. Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість
@@ -68,6 +69,14 @@ console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6));
 /* 7. Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи
 в масиві та залишить тільки ті, які діляться на ціло на 5
 Приклад: getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> [55, 55] */
+
+const getDividedByFive = (...numbers) => {
+    const devidedByFive = numbers.filter(number => number % 5 === 0);
+    return devidedByFive;
+}
+
+console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+
 
 /* 8. Створіть функцію replaceBadWords(string) – яка 1) розіб'є фразу на слова, 2)
 замінить погані слова на зірочки (*). При вирішенні цього завдання необхідно
