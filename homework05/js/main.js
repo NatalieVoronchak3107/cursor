@@ -5,6 +5,17 @@
 Приклад: getRandomArray(15, 1, 100) –> [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3,
 2]*/
 
+const getRandomArray = (length, min, max) => {
+    const randomArray = [];
+    for (let i = 0; i < length; i++) {
+        const randomNumbers = Math.floor(Math.random(i) * (max - min + 1)) + min;
+        randomArray.push(randomNumbers);
+      }
+      return randomArray;
+    }
+    
+console.log(getRandomArray(15,1,100));
+
 
 /* 2. Створіть функцію getModa(...numbers) – яка вираховує моду всіх переданих
 в неї аргументів. НЕ ЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
