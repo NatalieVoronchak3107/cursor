@@ -48,6 +48,12 @@ console.log(getMedian(1, 2, 3, 4, 5));
 передані як аргументи функції.
 Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5] */
 
+const filterEvenNumbers = (...numbers) => {
+    const skipEvenNumbers = numbers.filter(number => number % 2 !== 0);
+    return skipEvenNumbers;
+}
+console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6));
+
 /* 6. Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість
 чисел більших
 Приклад: countPositiveNumbers(1, -2, 3, -4, -5, 6) -> 3 */
