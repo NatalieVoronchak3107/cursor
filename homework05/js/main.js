@@ -10,8 +10,8 @@ const getRandomArray = (length, min, max) => {
     for (let i = 0; i < length; i++) {
         const randomNumbers = Math.floor(Math.random(i) * (max - min + 1)) + min;
         randomArray.push(randomNumbers);
-      }
-      return randomArray;
+    }
+return randomArray;
     }
     
 console.log(getRandomArray(15,1,100));
@@ -20,6 +20,14 @@ console.log(getRandomArray(15,1,100));
 всіх переданих в неї аргументів. НЕ ЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 Приклад: getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 34.4 */
 
+const getAverage = (...numbers) => {
+    const integerNumbers = numbers.filter(number => Number.isInteger(number));
+    const sum = integerNumbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    const average = (integerNumbers.length > 0) ? sum / integerNumbers.length : 0;
+    return average;
+}
+
+console.log(getAverage(7, 7, 5.8, 8.2, 7.7));
 
 /* 4. Створіть функцію getMedian(...numbers) – яка рахує медіану всіх переданих
 в неї аргументів. НЕ ЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
