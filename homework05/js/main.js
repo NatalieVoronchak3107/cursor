@@ -113,6 +113,25 @@ console.log(replaceBadWords("It's bullshit!"));
 Приклад: divideByThree("Commander) -> ["com", "man", "der"]
 Приклад: divideByThree("live") -> ["liv", "e"] */
 
+const divideByThree = (word) => {
+    const result = [];
+    const letters = word.toLowerCase().replace(/\s/g, "").split("");
+
+    for (let i = 0; i < letters.length; i += 3) {
+    const syllable = letters.slice(i, i + 3).join("");
+    if (syllable.length === 3) {
+        result.push(syllable);
+    } else {
+        result.push(letters.slice(i).join(""));
+        break;
+    }
+    }
+    return result;
+};
+
+console.log(divideByThree("Commander"));
+console.log(divideByThree("live"));
+
 /*10. Створіть функцію generateCombinations(word), яка видасть всі можливі
 перестановки(унікальні, без повторень) букв в слові. Для тестів не передавайте
 слова в яких більше 10 букв. Краще взагалі обмежити работу функції 10
