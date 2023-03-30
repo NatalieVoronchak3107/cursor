@@ -34,9 +34,35 @@ function getMiddleTaxes ()  {
 vacancies). Функція повинна викликатись через call та працювати з даними
 через this */
 
+function getTotalTaxes() {
+    return this.tax * this.middleSalary * this.vacancies;
+  }
+
+  console.log(`Total taxes in Ukraine: ${getTotalTaxes.call(ukraine)}`);
+  console.log(`Total taxes is Latvia: ${getTotalTaxes.call(latvia)}`);
+  console.log(`Total taxes in Litva: ${getTotalTaxes.call(litva)}`);
+
 /*4. Створіть функцію getMySalary(country) – яка буде писати в консоль об'єкт
 виду: { salary: number, taxes: number, profit: number } кожні 10 секунд.
 Значення salary – генеруйте випадковим чином у діапазоні 1500-2000. taxes –
 розраховується в залежності від вибраної країни та значення salary.
 profit = salary - taxes;
 для виводу в консоль кожні 10 секунд використайте setInterval*/
+
+function getMySalary(country) {
+    const salary = Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500;
+    const taxes = country.tax * salary;
+    const profit = salary - taxes;
+    
+    const result = {
+      salary: salary,
+      taxes: taxes,
+      profit: profit
+    };
+    
+    console.log(result);
+  }
+  
+  setInterval(function() {
+    getMySalary(ukraine);
+  }, 10000);
