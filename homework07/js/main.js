@@ -6,7 +6,7 @@ const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 скільки податків ви заплатите як IT-спеціаліст в якійсь з країн. Функція повинна
 викликатись через call та працювати з даними через this */
 
-function getMyTaxes(salary) {
+function getMyTaxes (salary) {
     return this.tax * salary;
   }
 
@@ -19,6 +19,15 @@ function getMyTaxes(salary) {
 скільки у середньому податків платятт IT-спеціалісти у кожній країні. (tax *
 middleSalary). Функція повинна викликатись через call та працювати з даними
 через this */
+
+function getMiddleTaxes ()  {
+    return this.tax * this.middleSalary;
+  }
+
+  console.log(`Avarage taxes in Ukraine: ${getMiddleTaxes.call(ukraine)}`);
+  console.log(`Avarage taxes is Latvia: ${getMiddleTaxes.call(latvia)}`);
+  console.log(`Avarage taxes in Litva: ${getMiddleTaxes.call(litva)}`);
+
 
 /*3. Створіть функцію getTotalTaxes.call(country) -> number; – яка рахує, скільки
 всього податків платять IT-спеціалісти у кожній країні. (tax * middleSalary *
