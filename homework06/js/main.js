@@ -27,6 +27,17 @@ const students = [{
 /* 1. Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента.
 Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл */
 
+const getSubjects = (student) => {
+    const subjectList = [];
+  
+    for (let subject in student.subjects) {
+      const formattedSubject = subject[0].toUpperCase() + subject.slice(1).replace('_', ' ');
+      subjectList.push(formattedSubject);
+    }
+    return subjectList;
+  }
+  console.log(getSubjects(students[0]));
+
 /* 2. Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ.
 Оцінку округліть до 2ого знаку. Можна використовувати функції, написані у попередніх домашніх завданнях :)*/
 
