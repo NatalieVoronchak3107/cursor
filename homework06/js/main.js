@@ -36,6 +36,7 @@ const getSubjects = (student) => {
     }
     return subjectList;
   }
+
   console.log(getSubjects(students[0]));
 
 /* 2. Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ.
@@ -57,13 +58,33 @@ const getAverageMark = (student) =>{
     const average = sum / marks.length;
     return average;
   }
+
   console.log(getAverageMark(students[0]));
 
 /* 3. Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по
 переданому студенту (вам знадобиться функція з попереднього завдання).Повинна бути виведена інформація: курс, ім'я, середня оцінка. */
 
+const getStudentInfo = (student) =>{
+    const info = {
+      course: student.course,
+      name: student.name,
+      averageMark: getAverageMark(student)
+    };
+    return info;
+  }
+
+console.log(getStudentInfo(students[0]));
+
 /* 4.Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку.*/
 
+const getStudentsNames = (students) => {
+    const names = students.map(student => student.name);
+    names.sort();
+    return names;
+  }
+  
+  console.log(getStudentsNames(students));
+  
 /* 5. Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.*/
 
 /*6. Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – к
