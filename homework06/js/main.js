@@ -88,20 +88,13 @@ const getStudentsNames = (students) => {
 /* 5. Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.*/
 
 const getBestStudent = (students) => {
-    let bestAverage = 0;
-    let bestStudent = '';
-    
-    students.forEach(student => {
-      const average = getAverageMark(student);
-      if (average > bestAverage) {
-        bestAverage = average;
-        bestStudent = student.name;
-      }
-    });
-    return bestStudent;
+    const averageMarks = students.map(student => getAverageMark(student));
+    const maxAverageMark = Math.max(...averageMarks);
+    const bestStudentIndex = averageMarks.indexOf(maxAverageMark);
+    return students[bestStudentIndex].name;
   }
-  
-  console.log(getBestStudent(students))
+
+  console.log(getBestStudent(students));
 
 /*6. Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – к
 ількість їх повторень. */
