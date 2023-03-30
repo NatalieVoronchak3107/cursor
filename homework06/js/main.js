@@ -107,12 +107,11 @@ const getBestStudent = (students) => {
 ількість їх повторень. */
 
 const calculateWordLetters = (word) => {
-    const letters = word.split(''); // перетворюємо рядок на масив символів
-    const letterCounts = letters.reduce((counts, letter) => {
-      counts[letter] = (counts[letter] || 0) + 1; // додаємо або збільшуємо значення для символу
-      return counts;
-    }, {});
-    return letterCounts;
+    const letters = {};
+    for (let letter of word) {
+      letters[letter] = (letters[letter] || 0) + 1;
+    }
+    return letters;
   }
   
   console.log(calculateWordLetters("тест"));
