@@ -41,6 +41,24 @@ const getSubjects = (student) => {
 /* 2. Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ.
 Оцінку округліть до 2ого знаку. Можна використовувати функції, написані у попередніх домашніх завданнях :)*/
 
+const getAverageMark = (student) =>{
+    const marks = [];
+  
+    for (let subject in student.subjects) {
+      marks.push(...student.subjects[subject]);
+    }
+  
+    const averageMark = getAverage(marks);
+    return Number(averageMark.toFixed(2));
+  }
+  
+  const getAverage = (marks) =>{
+    const sum = marks.reduce((total, mark) => total + mark, 0);
+    const average = sum / marks.length;
+    return average;
+  }
+  console.log(getAverageMark(students[0]));
+
 /* 3. Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по
 переданому студенту (вам знадобиться функція з попереднього завдання).Повинна бути виведена інформація: курс, ім'я, середня оцінка. */
 
