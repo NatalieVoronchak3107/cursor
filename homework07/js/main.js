@@ -50,19 +50,19 @@ profit = salary - taxes;
 для виводу в консоль кожні 10 секунд використайте setInterval*/
 
 function getMySalary(country) {
-    const salary = Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500;
-    const taxes = country.tax * salary;
-    const profit = salary - taxes;
-    
-    const result = {
-      salary: salary,
-      taxes: taxes,
-      profit: profit
-    };
-    
-    console.log(result);
-  }
-  
-  setInterval(function() {
-    getMySalary(ukraine);
-  }, 10000);
+  const salary = Math.floor(Math.random() * (2000 - 1500 + 1)) + 1500;
+  const taxes = country.tax * salary;
+  const profit = salary - taxes;
+
+  const result = {
+    salary: salary,
+    taxes: taxes,
+    profit: profit
+  };
+
+  console.log(result);
+}
+
+setInterval(function() {
+  getMySalary(latvia);
+}, 10000);
