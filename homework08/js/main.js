@@ -11,9 +11,7 @@ class Student {
   }
 
   getInfo() {
-    console.log(
-      `Студент ${this.course}го курсу ${this.university}, ${this.fullName}`
-    );
+    console.log(`Студент ${this.course}го курсу ${this.university}, ${this.fullName}`);
   }
 
   /* 2. Створіть геттер оцінок this.marks, який повертає масив оцінок студента [5, 4, 4, 5] */
@@ -62,11 +60,8 @@ this.marks -> [5, 4, 4, 5, 5] */
     this.dismissed = false;
   }
 }
-let student = new Student(
-  "Вищої Школи Психотерапії м.Одеса",
-  1,
-  "Остап Родоманський Бендер"
-);
+
+let student = new Student("Вищої Школи Психотерапії м.Одеса", 1, "Остап Родоманський Бендер");
 student.getInfo();
 console.log(student.marks);
 student.marks = 5;
@@ -82,33 +77,33 @@ console.log(`Студент ${student.course}го курсу ${student.universit
 /* 1. Створіть новий клас BudgetStudent, який повністю наслідує клас Student */
 
 class BudgetStudent extends Student {
-    constructor(university, course, fullName) {
-      super(university, course, fullName);
-      this._scholarship = 1400;
-      this.scholarshipInterval = setInterval(() => this.getScholarship(), 30000);
-}
+  constructor(university, course, fullName) {
+    super(university, course, fullName);
+    this._scholarship = 1400;
+    this.scholarshipInterval = setInterval(() => this.getScholarship(), 30000);
+  }
 
-/* 2. Бюджетний студент може отримати стипендію за допомогою методу this.getScholarship.
+  /* 2. Бюджетний студент може отримати стипендію за допомогою методу this.getScholarship.
 Отримання стипендії супроводжується виведенням інформації в консоль: Ви отримали 1400 грн. стипендії */
 
-getScholarship() {
+  getScholarship() {
     if (this.dismissed || this.getAverageMark() < 4) {
-      console.log('Ви не отримали стипендію');
+      console.log("Ви не отримали стипендію");
     } else {
       console.log(`Ви отримали ${this._scholarship} грн. стипендії`);
     }
   }
 
-dismiss() {
+  dismiss() {
     super.dismiss();
     clearInterval(this.scholarshipInterval);
-}
+  }
 }
 
 /* 3. Метод отримання стипендії автоматично викликається кожні 30 секунд післе створення об'єкту. Підказка: викликайте його в constructor.*/
 /* 4. Студент отримує стипендію тільки в тому випадку, якщо середній бал у нього вище або дорівнює 4.0 */
 /* 5. Якщо студента виключено, він не отримує стипендію (думаю це було і так очевидно :) */
-    
+
 let budgetStudent = new BudgetStudent("Київський Політехнічний Інститут", 2, "Олександр Войцехівський");
 budgetStudent.getInfo();
 budgetStudent.getScholarship();
