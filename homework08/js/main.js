@@ -1,6 +1,8 @@
 /* 1. Створіть метод this.getInfo() -> "Студент 1го курсу Вищої Школи Психотерапії м.Одеса, Остап Родоманський Бендер", метод повертає сукупну інформацію про
 курс, учбовий заклад та імені студента. */
 
+/* 2. Створіть геттер оцінок this.marks, який повертає масив оцінок студента [5, 4, 4, 5] */
+
 class Student {
   constructor(university, course, fullName) {
     this.university = university;
@@ -11,14 +13,18 @@ class Student {
   }
 
   getInfo() {
-    console.log(`Студент ${this.course}го курсу ${this.university}, ${this.fullName}`);
+    console.log(
+      `Студент ${this.course}го курсу ${this.university}, ${this.fullName}`);
+  }
+
+  get marks() {
+    return this._marks;
   }
 }
 
-let student = new Student("Вищої Школи Психотерапії м.Одеса",1, "Остап Родоманський Бендер");
+let student = new Student("Вищої Школи Психотерапії м.Одеса",1,"Остап Родоманський Бендер");
 student.getInfo();
-
-/* 2. Створіть геттер оцінок this.marks, який повертає масив оцінок студента [5, 4, 4, 5] */
+console.log(student.marks);
 
 /* 3. Створіть сеттер оцінок this.marks = 5, який дозволяє поставити оцінкустуденту. Після того, як оцінка поставлена, геттер повинен повернути масив
 this.marks -> [5, 4, 4, 5, 5] */
