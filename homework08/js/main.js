@@ -113,5 +113,5 @@ let budgetStudent = new BudgetStudent("Київський Політехнічн
 budgetStudent.getInfo();
 budgetStudent.getScholarship();
 
-budgetStudent.dismiss();
-budgetStudent.getScholarship();
+//budgetStudent.dismiss();
+//budgetStudent.getScholarship();
