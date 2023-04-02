@@ -1,8 +1,6 @@
 /* 1. Створіть метод this.getInfo() -> "Студент 1го курсу Вищої Школи Психотерапії м.Одеса, Остап Родоманський Бендер", метод повертає сукупну інформацію про
 курс, учбовий заклад та імені студента. */
 
-/* 2. Створіть геттер оцінок this.marks, який повертає масив оцінок студента [5, 4, 4, 5] */
-
 class Student {
   constructor(university, course, fullName) {
     this.university = university;
@@ -17,19 +15,36 @@ class Student {
       `Студент ${this.course}го курсу ${this.university}, ${this.fullName}`);
   }
 
+/* 2. Створіть геттер оцінок this.marks, який повертає масив оцінок студента [5, 4, 4, 5] */
+
   get marks() {
     return this._marks;
   }
+
+/* 3. Створіть сеттер оцінок this.marks = 5, який дозволяє поставити оцінкустуденту. Після того, як оцінка поставлена, геттер повинен повернути масив
+this.marks -> [5, 4, 4, 5, 5] */
+
+  set marks(marks) {
+    this._marks.push(marks);
+  }
+
+/* 4. Створіть метод отримання середнього балу this.getAverageMark() -> 4.6 */
+
+getAverageMark() {
+    let sum = 0;
+    for (let i = 0; i < this._marks.length; i++) {
+    sum += this._marks[i];
+    }
+    return (sum / this._marks.length).toFixed(1);
+    }
 }
 
 let student = new Student("Вищої Школи Психотерапії м.Одеса",1,"Остап Родоманський Бендер");
 student.getInfo();
 console.log(student.marks);
-
-/* 3. Створіть сеттер оцінок this.marks = 5, який дозволяє поставити оцінкустуденту. Після того, як оцінка поставлена, геттер повинен повернути масив
-this.marks -> [5, 4, 4, 5, 5] */
-
-/* 4. Створіть метод отримання середнього балу this.getAverageMark() -> 4.6 */
+student.marks = 5;
+console.log(student.marks)
+console.log(student.getAverageMark());
 
 /* 5. Створіть метод this.dismiss, який "виключить" студента. Після виклику цього методу – ставити студенту оцінки та отримувати їх більше не можна. (Ніяких
 помилок, просто повертається завжди null замість масиву оцінок) */
