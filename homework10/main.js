@@ -27,7 +27,6 @@ function playSoundAndChangeBackground(keyCode) {
   keyElement.classList.add("playing");
 }
 
-// Видалити клас "playing" після анімації
 const keys = document.querySelectorAll(".key");
 keys.forEach((key) => {
   key.addEventListener("click", () => playSoundAndChangeBackground(key.id));
